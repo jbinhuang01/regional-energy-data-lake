@@ -1,0 +1,5 @@
+model,outcome,status,n,r_squared,adj_r_squared,hac_maxlags
+price_level_baseline,price_day_ahead,PASS,239,0.9205822869459259,0.905963105935972,24
+price_level_regime_interactions,price_day_ahead,PASS,239,0.9232830145428738,0.9073165353360607,24
+price_volatility_baseline,price_volatility_24h,PASS,229,0.6247805338743737,0.5520940404364252,24
+negative_price_lpm,negative_price_flag,PASS,239,0.6456064316978192,0.5803698046969202,24

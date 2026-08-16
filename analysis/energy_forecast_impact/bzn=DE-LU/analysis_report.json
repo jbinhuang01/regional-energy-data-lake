@@ -1,0 +1,32 @@
+{
+  "analysis": "energy_forecast_impact",
+  "created_at_utc": "2026-08-16T04:49:03+00:00",
+  "gold_batch": "data_lake/gold/energy_forecast_impact/market_batch=20260816T044724Z__weather_batch=2024-06-01T00-00Z/bzn=DE-LU",
+  "analysis_output": "analysis/energy_forecast_impact/bzn=DE-LU",
+  "rows_analyzed": 240,
+  "forecast_runs": 1,
+  "bidding_zones": [
+    "DE-LU"
+  ],
+  "model_summaries_file": "analysis/energy_forecast_impact/bzn=DE-LU/model_summaries.csv",
+  "coefficient_file": "analysis/energy_forecast_impact/bzn=DE-LU/model_coefficients.csv",
+  "horizon_table_file": "analysis/energy_forecast_impact/bzn=DE-LU/market_outcomes_by_horizon.csv",
+  "regime_table_file": "analysis/energy_forecast_impact/bzn=DE-LU/market_outcomes_by_regime.csv",
+  "price_plot": "analysis/energy_forecast_impact/bzn=DE-LU/price_and_renewable_regimes.png",
+  "scatter_plot": "analysis/energy_forecast_impact/bzn=DE-LU/forecast_error_price_scatter.png",
+  "inference": {
+    "standard_errors": "HAC with maxlags=24",
+    "fixed_effects": [
+      "hour_utc",
+      "day_of_week"
+    ],
+    "standardization": "continuous predictors standardized within this Gold batch",
+    "interpretation": "conditional association, not causal effect"
+  },
+  "limitations": [
+    "one forecast initialization",
+    "one bidding zone",
+    "forecast initialization is an availability proxy, not exact publication time",
+    "Energy-Charts public power data and weather actuals have different source semantics"
+  ]
+}

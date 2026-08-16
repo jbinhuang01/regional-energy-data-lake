@@ -1,0 +1,5 @@
+variable,variable_label,horizon_bins,mae_slope_per_hour,mae_slope_per_24_hours,horizon_mae_correlation,interpretation
+precipitation,Precipitation,10,0.000946599143610013,0.022718379446640312,0.3460104484063148,descriptive upward MAE trend
+shortwave_radiation,Shortwave radiation,10,0.3740492104011125,8.9771810496267,0.5877005148427585,descriptive upward MAE trend
+temperature,Temperature,10,0.010204124579124577,0.24489898989898984,0.6308360602294407,descriptive upward MAE trend
+wind_speed,Wind speed,10,0.011561973905723905,0.27748737373737375,0.668010030958795,descriptive upward MAE trend

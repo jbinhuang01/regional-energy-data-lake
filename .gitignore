@@ -1,0 +1,9 @@
+data_lake/
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+.idea/
+.resume-render/
+.codex-site-patch/
+docs/*.docx

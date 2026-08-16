@@ -1,0 +1,23 @@
+{
+  "created_at_utc": "2026-08-16T11:06:30+00:00",
+  "lake_root": "data_lake",
+  "registry_file": "metadata/data_lake_registry.parquet",
+  "registry_csv": "metadata/data_lake_registry.csv",
+  "artifact_count": 48,
+  "complete_count": 40,
+  "warning_count": 8,
+  "failed_artifacts": [
+    "data_lake/bronze/energy_charts/ingestion_date=20260816/batch_id=20260816T044138Z",
+    "data_lake/bronze/energy_charts/ingestion_date=20260816/batch_id=20260816T044220Z",
+    "data_lake/bronze/energy_charts/ingestion_date=20260816/batch_id=20260816T110203Z",
+    "data_lake/bronze/energy_charts/ingestion_date=20260816/batch_id=20260816T110325Z",
+    "data_lake/bronze/opsd_time_series/ingestion_date=20260804/batch_id=20260804T114958Z",
+    "data_lake/bronze/weather_forecast_vintage/ingestion_date=20260804/batch_id=20260804T123152Z",
+    "data_lake/bronze/weather_forecast_vintage/ingestion_date=20260816/batch_id=20260816T100641Z",
+    "data_lake/gold/forecast_error_panel/forecast_batch=20260816T100737Z__actual_batch=20260804T124555Z/multi_vintage"
+  ],
+  "quality_gate": {
+    "minimum_gold_match_rate": 0.99,
+    "purpose": "prevent incomplete or poorly matched data from being treated as production-ready"
+  }
+}

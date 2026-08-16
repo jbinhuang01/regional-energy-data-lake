@@ -1,0 +1,30 @@
+{
+  "created_at_utc": "2026-08-16T11:06:31+00:00",
+  "registry": "metadata/data_lake_registry.parquet",
+  "contracts": "metadata/data_contracts.json",
+  "results_file": "metadata/contract_validation_results.parquet",
+  "total_artifacts": 48,
+  "pass_count": 15,
+  "fail_count": 2,
+  "warn_count": 15,
+  "skip_bronze_count": 16,
+  "failed_artifacts": [
+    "data_lake/bronze/energy_charts/ingestion_date=20260816/batch_id=20260816T044138Z",
+    "data_lake/bronze/energy_charts/ingestion_date=20260816/batch_id=20260816T044220Z",
+    "data_lake/bronze/energy_charts/ingestion_date=20260816/batch_id=20260816T110203Z",
+    "data_lake/bronze/energy_charts/ingestion_date=20260816/batch_id=20260816T110325Z",
+    "data_lake/bronze/opsd_time_series/ingestion_date=20260804/batch_id=20260804T114958Z",
+    "data_lake/bronze/weather_forecast_vintage/ingestion_date=20260804/batch_id=20260804T123152Z",
+    "data_lake/bronze/weather_forecast_vintage/ingestion_date=20260816/batch_id=20260816T100641Z",
+    "data_lake/gold/energy_forecast_impact/market_batch=20260816T044339Z__weather_batch=2024-06-01T00-00Z/bzn=DE-LU",
+    "data_lake/gold/energy_forecast_impact/market_batch=20260816T044724Z__weather_batch=multi_vintage/bzn=DE-LU",
+    "data_lake/gold/forecast_error_panel/forecast_batch=20260816T100737Z__actual_batch=20260804T124555Z/multi_vintage",
+    "data_lake/gold/forecast_error_panel/forecast_batch=20260816T103952Z__actual_batch=20260816T103831Z/multi_vintage",
+    "data_lake/gold/forecast_error_panel_multi_zone/forecast_batch=20260816T105628Z__actual_batch=20260816T105601Z/multi_vintage",
+    "data_lake/gold/multi_zone_forecast_impact/panel_batch=20260816T110519Z",
+    "data_lake/gold/multi_zone_forecast_impact_v2/panel_batch=20260816T110610Z",
+    "data_lake/silver/weather_forecast_vintage_panel/ingestion_date=20260816/batch_id=20260816T100737Z",
+    "data_lake/silver/weather_forecast_vintage_panel/ingestion_date=20260816/batch_id=20260816T103952Z",
+    "data_lake/silver/weather_forecast_vintage_panel/ingestion_date=20260816/batch_id=20260816T105628Z"
+  ]
+}

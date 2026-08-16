@@ -1,0 +1,37 @@
+{
+  "analysis": "multi_vintage_energy_forecast_impact",
+  "created_at_utc": "2026-08-16T10:43:37+00:00",
+  "gold_batch": "data_lake/gold/energy_forecast_impact/market_batch=20260816T103913Z__weather_batch=multi_vintage/bzn=DE-LU",
+  "rows_analyzed": 7200,
+  "forecast_runs": 30,
+  "valid_hours": 588,
+  "models": [
+    "price_level_vintage_panel",
+    "price_level_regime_interactions",
+    "price_volatility_vintage_panel",
+    "negative_price_regime_interactions"
+  ],
+  "model_summaries_file": "analysis/multi_vintage_impact_30d/bzn=DE-LU/model_summaries.csv",
+  "coefficient_file": "analysis/multi_vintage_impact_30d/bzn=DE-LU/model_coefficients.csv",
+  "vintage_coverage_file": "analysis/multi_vintage_impact_30d/bzn=DE-LU/vintage_coverage.csv",
+  "horizon_regime_file": "analysis/multi_vintage_impact_30d/bzn=DE-LU/horizon_regime_stability.csv",
+  "plots": [
+    "analysis/multi_vintage_impact_30d/bzn=DE-LU/forecast_error_by_horizon.png",
+    "analysis/multi_vintage_impact_30d/bzn=DE-LU/market_outcomes_by_vintage.png"
+  ],
+  "inference": {
+    "fixed_effects": [
+      "hour_utc",
+      "valid_date"
+    ],
+    "standard_errors": "two-way clustered by valid_time_utc and forecast_run_utc",
+    "continuous_predictors": "standardized within the multi-vintage Gold panel",
+    "interpretation": "conditional association, not causal effect"
+  },
+  "limitations": [
+    "forecast run count is still small for cluster-based inference",
+    "one bidding zone and one ten-day market window",
+    "forecast_run_utc is model initialization time, not exact provider publication time",
+    "repeated market outcomes across vintages require event/run clustered inference"
+  ]
+}

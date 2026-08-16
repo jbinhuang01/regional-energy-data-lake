@@ -1,0 +1,152 @@
+{
+  "silver/opsd_time_series": {
+    "required_columns": [
+      "source",
+      "region",
+      "metric",
+      "event_time_utc",
+      "value",
+      "unit",
+      "ingested_at_utc",
+      "batch_id"
+    ],
+    "report_rules": [
+      {"path": "invalid_timestamp_count", "op": "eq", "value": 0},
+      {"path": "negative_physical_value_count", "op": "eq", "value": 0},
+      {"path": "duplicate_key_count_within_chunks", "op": "eq", "value": 0},
+      {"path": "unknown_column_count", "op": "eq", "value": 0}
+    ]
+  },
+  "silver/weather_open_meteo": {
+    "required_columns": [
+      "event_time_utc",
+      "location",
+      "latitude",
+      "longitude",
+      "temperature_2m_c",
+      "relative_humidity_2m_pct",
+      "precipitation_mm",
+      "wind_speed_10m_kmh",
+      "shortwave_radiation_w_m2",
+      "weather_code",
+      "source",
+      "batch_id"
+    ],
+    "report_rules": [
+      {"path": "location_reports.*.invalid_timestamp_count", "op": "eq", "value": 0},
+      {"path": "location_reports.*.duplicate_key_count", "op": "eq", "value": 0},
+      {"path": "location_reports.*.missing_hour_intervals", "op": "eq", "value": 0}
+    ]
+  },
+  "silver/weather_forecast_vintage": {
+    "required_columns": [
+      "forecast_run_utc",
+      "valid_time_utc",
+      "forecast_horizon_hours",
+      "location",
+      "model",
+      "temperature_forecast_c",
+      "wind_speed_forecast_kmh",
+      "shortwave_radiation_forecast_w_m2",
+      "precipitation_forecast_mm",
+      "source",
+      "batch_id"
+    ],
+    "report_rules": [
+      {"path": "location_reports.*.invalid_time_count", "op": "eq", "value": 0},
+      {"path": "location_reports.*.negative_horizon_count", "op": "eq", "value": 0},
+      {"path": "location_reports.*.duplicate_key_count", "op": "eq", "value": 0}
+    ]
+  },
+  "silver/energy_charts": {
+    "required_columns": [
+      "event_time_utc",
+      "metric",
+      "value",
+      "unit",
+      "series_type",
+      "source_endpoint",
+      "source",
+      "country",
+      "bzn",
+      "batch_id",
+      "resolution_minutes"
+    ],
+    "report_rules": [
+      {"path": "metric_reports.*.invalid_timestamp_count", "op": "eq", "value": 0},
+      {"path": "metric_reports.*.duplicate_key_count", "op": "eq", "value": 0},
+      {"path": "metric_reports.*.resolution_minutes", "op": "gt", "value": 0}
+    ]
+  },
+  "gold/energy_research": {
+    "required_columns": [
+      "event_time_utc",
+      "region",
+      "load_actual_mw",
+      "load_forecast_mw",
+      "load_forecast_error_mw",
+      "renewable_generation_mw",
+      "renewable_share",
+      "price_day_ahead_eur_mwh",
+      "negative_price_flag",
+      "price_spike_flag",
+      "hour_utc",
+      "day_of_week",
+      "source",
+      "silver_batch_id"
+    ],
+    "report_rules": [
+      {"path": "renewable_share_over_100pct_rows", "op": "eq", "value": 0}
+    ]
+  },
+  "gold/forecast_error": {
+    "required_columns": [
+      "forecast_run_utc",
+      "valid_time_utc",
+      "forecast_horizon_hours",
+      "location",
+      "model",
+      "actual_match_flag",
+      "temperature_error",
+      "temperature_absolute_error",
+      "wind_speed_error",
+      "wind_speed_absolute_error",
+      "shortwave_radiation_error",
+      "shortwave_radiation_absolute_error",
+      "precipitation_error",
+      "precipitation_absolute_error",
+      "actual_batch_id"
+    ],
+    "report_rules": [
+      {"path": "match_rate", "op": "ge", "value": 0.99},
+      {"path": "unmatched_rows", "op": "eq", "value": 0},
+      {"path": "forecast_duplicate_key_count", "op": "eq", "value": 0},
+      {"path": "actual_duplicate_key_count", "op": "eq", "value": 0}
+    ]
+  },
+  "gold/energy_forecast_impact": {
+    "required_columns": [
+      "forecast_run_utc",
+      "valid_time_utc",
+      "forecast_horizon_hours",
+      "market_match_flag",
+      "forecast_availability_proxy",
+      "price_day_ahead",
+      "price_volatility_24h",
+      "negative_price_flag",
+      "temperature_error",
+      "wind_speed_error",
+      "shortwave_radiation_error",
+      "precipitation_error",
+      "load_forecast_error_mw",
+      "market_batch_id",
+      "weather_batch_id"
+    ],
+    "report_rules": [
+      {"path": "market_match_rate", "op": "ge", "value": 0.99},
+      {"path": "market_unmatched_rows", "op": "eq", "value": 0},
+      {"path": "availability_proxy_violations", "op": "eq", "value": 0},
+      {"path": "weather_location_complete_rate", "op": "ge", "value": 0.99}
+    ]
+  }
+}

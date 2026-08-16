@@ -1,0 +1,41 @@
+{
+  "analysis": "multi_zone_multi_vintage_energy_forecast_impact",
+  "created_at_utc": "2026-08-16T11:06:21+00:00",
+  "gold_batch": "data_lake/gold/multi_zone_forecast_impact_v2/panel_batch=20260816T110610Z",
+  "rows_analyzed": 21600,
+  "zones": [
+    "AT",
+    "DE-LU",
+    "FR"
+  ],
+  "zone_count": 3,
+  "forecast_runs": 30,
+  "valid_hours_by_zone": {
+    "AT": 588,
+    "DE-LU": 588,
+    "FR": 588
+  },
+  "model_summaries_file": "analysis/multi_zone_multi_vintage_v2/panel_batch=20260816T110610Z/model_summaries.csv",
+  "coefficient_file": "analysis/multi_zone_multi_vintage_v2/panel_batch=20260816T110610Z/model_coefficients.csv",
+  "zone_coverage_file": "analysis/multi_zone_multi_vintage_v2/panel_batch=20260816T110610Z/zone_coverage.csv",
+  "zone_regime_file": "analysis/multi_zone_multi_vintage_v2/panel_batch=20260816T110610Z/zone_regime_summary.csv",
+  "plots": [
+    "analysis/multi_zone_multi_vintage_v2/panel_batch=20260816T110610Z/market_regimes_by_zone.png",
+    "analysis/multi_zone_multi_vintage_v2/panel_batch=20260816T110610Z/regime_interactions.png"
+  ],
+  "inference": {
+    "fixed_effects": [
+      "bzn",
+      "hour_utc",
+      "valid_date"
+    ],
+    "standard_errors": "two-way clustered by valid_time_utc and forecast_run_utc",
+    "standardization": "within-zone standardization for continuous predictors",
+    "interpretation": "conditional association, not causal effect"
+  },
+  "limitations": [
+    "one representative weather point per bidding zone",
+    "forecast run count is common across zones and still limited by one month",
+    "market outcomes are repeated across forecast vintages"
+  ]
+}

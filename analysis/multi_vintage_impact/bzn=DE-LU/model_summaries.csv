@@ -1,0 +1,5 @@
+model,outcome,status,n,r_squared,adjusted_r_squared,cluster_dimensions,smallest_cluster_count,inference_df
+price_level_vintage_panel,price_day_ahead,PASS,1576,0.9256851854847962,0.9237486430870059,"['valid_time_utc', 'forecast_run_utc']",8,7
+price_level_regime_interactions,price_day_ahead,PASS,1576,0.9268353467461411,0.9246834451798511,"['valid_time_utc', 'forecast_run_utc']",8,7
+price_volatility_vintage_panel,price_volatility_24h,PASS,1566,0.5112009137583776,0.4983799541192532,"['valid_time_utc', 'forecast_run_utc']",8,7
+negative_price_regime_interactions,negative_price_flag,PASS,1576,0.6083934155323428,0.5968755748127059,"['valid_time_utc', 'forecast_run_utc']",8,7

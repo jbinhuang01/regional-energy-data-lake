@@ -1,0 +1,33 @@
+{
+  "analysis": "forecast_error_by_horizon",
+  "created_at_utc": "2026-08-04T12:53:08+00:00",
+  "gold_batch": "data_lake/gold/forecast_error/forecast_batch=20260804T123343Z__actual_batch=20260804T124555Z/run=2024-06-01T00-00Z",
+  "analysis_output": "analysis/forecast_error/run=2024-06-01T00-00Z",
+  "overall_metrics_file": "analysis/forecast_error/run=2024-06-01T00-00Z/overall_error_metrics.csv",
+  "horizon_metrics_file": "analysis/forecast_error/run=2024-06-01T00-00Z/horizon_error_metrics.csv",
+  "trend_file": "analysis/forecast_error/run=2024-06-01T00-00Z/horizon_trends.csv",
+  "plot_file": "analysis/forecast_error/run=2024-06-01T00-00Z/mae_by_forecast_horizon.png",
+  "bias_plot_file": "analysis/forecast_error/run=2024-06-01T00-00Z/bias_by_forecast_horizon.png",
+  "location_plot_file": "analysis/forecast_error/run=2024-06-01T00-00Z/mae_by_location.png",
+  "distribution_plot_file": "analysis/forecast_error/run=2024-06-01T00-00Z/error_distribution_by_horizon.png",
+  "location_metrics_file": "analysis/forecast_error/run=2024-06-01T00-00Z/location_error_metrics.csv",
+  "location_horizon_metrics_file": "analysis/forecast_error/run=2024-06-01T00-00Z/location_horizon_error_metrics.csv",
+  "variables": [
+    "precipitation",
+    "shortwave_radiation",
+    "temperature",
+    "wind_speed"
+  ],
+  "horizon_bins": 10,
+  "locations": [
+    "frankfurt",
+    "luxembourg"
+  ],
+  "variables_with_descriptive_upward_mae_trend": [
+    "precipitation",
+    "shortwave_radiation",
+    "temperature",
+    "wind_speed"
+  ],
+  "interpretation_note": "The horizon trend is descriptive. It does not establish causality, and this single forecast run is not sufficient for uncertainty estimation across forecast initializations."
+}

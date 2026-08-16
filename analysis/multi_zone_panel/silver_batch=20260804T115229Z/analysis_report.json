@@ -1,0 +1,32 @@
+{
+  "analysis": "multi_zone_fixed_effects",
+  "panel": "data_lake/gold/multi_zone_panel/silver_batch=20260804T115229Z",
+  "created_at_utc": "2026-08-04T12:22:49+00:00",
+  "panel_rows": 269541,
+  "model_rows": 250519,
+  "zones": [
+    "AT",
+    "DE_LU",
+    "DK_1",
+    "DK_2",
+    "GB_GBN",
+    "IT_NORD"
+  ],
+  "zone_count": 6,
+  "formula_terms": "renewable_share_pct + load_forecast_error_gw + C(region) + C(hour_utc) + C(day_of_week) + C(year)",
+  "standard_errors": "clustered by region",
+  "small_cluster_warning": "Only six region clusters are available. Cluster-robust p-values are fragile and should be checked with a wild-cluster bootstrap.",
+  "price_model": {
+    "formula": "price_day_ahead_eur_mwh ~ renewable_share_pct + load_forecast_error_gw + C(region) + C(hour_utc) + C(day_of_week) + C(year)",
+    "observations": 250519,
+    "r_squared": 0.4944916108702504,
+    "adjusted_r_squared": 0.49440886537284223
+  },
+  "negative_price_model": {
+    "formula": "negative_price_flag ~ renewable_share_pct + load_forecast_error_gw + C(region) + C(hour_utc) + C(day_of_week) + C(year)",
+    "observations": 250519,
+    "r_squared": 0.0391742904523017,
+    "adjusted_r_squared": 0.03901701511727518
+  },
+  "price_spike_threshold_eur_mwh": 100
+}

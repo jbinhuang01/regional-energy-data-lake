@@ -1,0 +1,20 @@
+{
+  "analysis": "wild_cluster_bootstrap",
+  "panel": "data_lake/gold/multi_zone_panel/silver_batch=20260804T115229Z",
+  "created_at_utc": "2026-08-04T12:25:12+00:00",
+  "rows": 250519,
+  "clusters": [
+    "AT",
+    "DE_LU",
+    "DK_1",
+    "DK_2",
+    "GB_GBN",
+    "IT_NORD"
+  ],
+  "cluster_count": 6,
+  "repetitions": 999,
+  "seed": 20260804,
+  "weight_distribution": "Rademacher +/- 1 at region level",
+  "formula_terms": "renewable_share_pct + load_forecast_error_gw + C(region) + C(hour_utc) + C(day_of_week) + C(year)",
+  "interpretation_note": "Bootstrap p-values are more conservative for the six-cluster panel, but six clusters remain a hard limit on inferential reliability."
+}

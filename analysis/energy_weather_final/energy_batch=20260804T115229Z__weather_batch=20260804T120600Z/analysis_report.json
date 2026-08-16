@@ -1,0 +1,18 @@
+{
+  "panel": "data_lake/gold/energy_weather_panel/region=DE_LU/energy_batch=20260804T115229Z__weather_batch=20260804T120600Z",
+  "created_at_utc": "2026-08-04T12:13:46+00:00",
+  "rows_in_panel": 17546,
+  "rows_in_models": 16628,
+  "start_time_utc": "2018-09-30T22:00:00+00:00",
+  "end_time_utc": "2020-09-30T23:00:00+00:00",
+  "negative_price_rows": 484,
+  "price_spike_rows": 26,
+  "price_spike_threshold_eur_mwh": 100,
+  "model_formula_terms": "renewable_share_pct + temperature_2m_c_mean + wind_speed_10m_kmh_mean + load_forecast_error_gw + C(hour_utc) + C(day_of_week) + C(year)",
+  "covariance": "HAC/Newey-West with 24 hourly lags",
+  "interpretation_note": "Results describe conditional associations. They are not causal estimates because weather, generation and market conditions are not randomized.",
+  "model_r_squared": {
+    "price": 0.715756748543279,
+    "negative_price_lpm": 0.1717913100008518
+  }
+}
