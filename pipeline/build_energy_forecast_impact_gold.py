@@ -1,15 +1,5 @@
 #!/usr/bin/env python3
-"""Build a point-in-time Gold panel linking weather forecast errors to market outcomes.
-
-The job joins the weather forecast-error Gold mart to Energy-Charts market
-Silver. Market data is first aggregated from native 15-minute observations to
-UTC hours using an explicit arithmetic mean. Price data is already hourly, so
-the same operation leaves its hourly values unchanged.
-
-This is an association panel, not a causal design. Forecast initialization
-time is retained as an availability proxy and all batch IDs are preserved for
-lineage.
-"""
+"""Join one market zone to the weather forecast-error Gold table."""
 
 from __future__ import annotations
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate Silver and Gold batches against externalized data contracts."""
+"""Check registered Silver and Gold batches against their contracts."""
 
 from __future__ import annotations
 

@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
-"""Run fixed-effects panel regressions on the multi-zone Gold panel.
-
-The models estimate conditional associations after controlling for zone,
-hour-of-day, weekday and year fixed effects. Standard errors are clustered by
-zone. Because the current panel has only six zones, inference is explicitly
-flagged as small-cluster and should be followed by a wild-cluster bootstrap.
-"""
+"""Fit the earlier OPSD multi-zone fixed-effects models."""
 
 from __future__ import annotations
 

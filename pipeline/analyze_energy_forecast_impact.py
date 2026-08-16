@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
-"""Analyze the Energy Forecast Impact Gold panel.
-
-The models are deliberately descriptive. They use HAC standard errors with a
-24-hour lag window, fixed effects for hour and weekday, and a high-renewables
-interaction. A single forecast initialization and one bidding zone are not
-enough for causal inference or external validity.
-"""
+"""Fit the original single-zone forecast-impact models."""
 
 from __future__ import annotations
 

@@ -1,12 +1,5 @@
 #!/usr/bin/env python3
-"""Estimate forecast-error effects after adding multiple forecast vintages.
-
-The model uses valid-date and hour fixed effects.  Standard errors are
-two-way clustered by valid hour and forecast run, because observations from
-the same event and observations from the same model run are not independent.
-This is still an association design, but it is a more defensible robustness
-check than fitting one time series with HAC errors.
-"""
+"""Fit the multi-vintage forecast-impact models."""
 
 from __future__ import annotations
 

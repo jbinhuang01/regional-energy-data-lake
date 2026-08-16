@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Normalize a multi-run forecast Bronze batch into one Silver panel."""
+"""Normalize a multi-run forecast batch into event-level Silver rows."""
 
 from __future__ import annotations
 

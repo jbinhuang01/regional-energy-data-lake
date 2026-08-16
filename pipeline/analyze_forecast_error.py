@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""Analyze weather forecast error by forecast horizon.
-
-The input is the forecast-error Gold mart produced by
-build_forecast_error_gold.py.  The main research question is whether error
-increases as the forecast horizon becomes longer.
-"""
+"""Summarize forecast error by horizon and location."""
 
 from __future__ import annotations
 

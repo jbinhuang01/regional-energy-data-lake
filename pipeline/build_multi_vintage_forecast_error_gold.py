@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
-"""Build one forecast-error Gold panel from multiple forecast vintages.
-
-The output deliberately keeps repeated ``valid_time_utc`` values when they
-come from different ``forecast_run_utc`` values.  Those repeated observations
-are the research signal: they show how forecasts were revised as the event
-got closer.
-"""
+"""Join multiple forecast runs to actual weather observations."""
 
 from __future__ import annotations
 

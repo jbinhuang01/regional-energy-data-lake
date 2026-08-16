@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""Build one multi-zone market/weather Gold panel.
-
-Each bidding zone is joined to its own representative weather location.  The
-weather error panel may contain several locations, so silently averaging all
-locations across all zones would create a misleading cross-region panel.
-"""
+"""Join each bidding zone to its own weather representative."""
 
 from __future__ import annotations
 

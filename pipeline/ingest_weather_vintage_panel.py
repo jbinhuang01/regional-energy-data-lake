@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
-"""Ingest several forecast vintages into one Bronze parent batch.
-
-The important distinction is between ``forecast_run_utc`` and
-``valid_time_utc``.  Multiple runs can predict the same valid hour.  Keeping
-both timestamps makes it possible to study forecast revision and horizon
-effects instead of treating one forecast as if it were the only forecast.
-"""
+"""Download several archived forecast runs into one Bronze batch."""
 
 from __future__ import annotations
 

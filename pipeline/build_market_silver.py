@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""Normalize Energy-Charts Bronze responses into native-resolution Silver.
-
-Price data is hourly while public power and its forecasts may be 15-minute.
-Silver deliberately preserves those native resolutions. Any hourly aggregation
-belongs in a later Gold job and must be explicit about its aggregation rule.
-"""
+"""Normalize Energy-Charts responses without changing source resolution."""
 
 from __future__ import annotations
 

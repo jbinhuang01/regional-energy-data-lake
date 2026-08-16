@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
-"""Ingest hourly historical weather for the DE-LU energy study.
-
-This creates a second independent Bronze source. It stores the raw Open-Meteo
-JSON response, the exact request parameters, and a SHA-256 manifest entry.
-Weather is fetched at two representative points: Frankfurt and Luxembourg.
-The date range matches the current DE-LU Gold research mart.
-"""
+"""Download hourly historical weather for selected representative points."""
 
 from __future__ import annotations
 

@@ -1,15 +1,5 @@
 #!/usr/bin/env python3
-"""Ingest 2024 Energy-Charts market data into an immutable Bronze batch.
-
-The script keeps the provider JSON unchanged and stores request metadata next
-to each response. The default scope is the DE-LU bidding zone and Germany's
-public power data for the same UTC date range as the forecast-vintage branch.
-
-Endpoints:
-    /price                  day-ahead price for a bidding zone
-    /public_power           actual public net generation by production type
-    /public_power_forecast  optional day-ahead forecasts for load/renewables
-"""
+"""Download Energy-Charts price, public power and forecast responses."""
 
 from __future__ import annotations
 

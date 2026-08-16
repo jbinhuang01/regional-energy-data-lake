@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""Analyze the final energy-weather Gold panel.
-
-The analysis is intentionally separated from the lake transformations. It
-produces descriptive statistics and HAC-robust association models, not causal
-claims or production forecasts.
-"""
+"""Summarize the original energy/weather Gold panel."""
 
 from __future__ import annotations
 
