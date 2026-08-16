@@ -15,13 +15,13 @@
     "DE-LU": 588,
     "FR": 588
   },
-  "model_summaries_file": "analysis/multi_zone_multi_vintage_v2/panel_batch=20260816T110610Z/model_summaries.csv",
-  "coefficient_file": "analysis/multi_zone_multi_vintage_v2/panel_batch=20260816T110610Z/model_coefficients.csv",
-  "zone_coverage_file": "analysis/multi_zone_multi_vintage_v2/panel_batch=20260816T110610Z/zone_coverage.csv",
-  "zone_regime_file": "analysis/multi_zone_multi_vintage_v2/panel_batch=20260816T110610Z/zone_regime_summary.csv",
+  "model_summaries_file": "analysis/current/panel_batch=20260816T110610Z/model_summaries.csv",
+  "coefficient_file": "analysis/current/panel_batch=20260816T110610Z/model_coefficients.csv",
+  "zone_coverage_file": "analysis/current/panel_batch=20260816T110610Z/zone_coverage.csv",
+  "zone_regime_file": "analysis/current/panel_batch=20260816T110610Z/zone_regime_summary.csv",
   "plots": [
-    "analysis/multi_zone_multi_vintage_v2/panel_batch=20260816T110610Z/market_regimes_by_zone.png",
-    "analysis/multi_zone_multi_vintage_v2/panel_batch=20260816T110610Z/regime_interactions.png"
+    "analysis/current/panel_batch=20260816T110610Z/market_regimes_by_zone.png",
+    "analysis/current/panel_batch=20260816T110610Z/regime_interactions.png"
   ],
   "inference": {
     "fixed_effects": [

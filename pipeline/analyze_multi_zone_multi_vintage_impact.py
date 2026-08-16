@@ -45,7 +45,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--gold-batch", type=Path, required=True)
     parser.add_argument(
-        "--output-root", type=Path, default=Path("analysis/multi_zone_multi_vintage")
+        "--output-root", type=Path, default=Path("analysis/current")
     )
     return parser.parse_args()
 

@@ -33,10 +33,10 @@ parameters, retrieval time and checksum so the raw layer can be rebuilt.
 | Market-impact rows | 21,600 |
 | Market match rate | 100% |
 
-The final cross-zone analysis is under:
+The current cross-zone analysis is under:
 
 ```text
-analysis/multi_zone_multi_vintage_v2/panel_batch=20260816T110610Z/
+analysis/current/panel_batch=20260816T110610Z/
 ```
 
 The main files are:
@@ -53,6 +53,15 @@ are clustered by valid hour and forecast run because the same market outcome
 appears in several forecast vintages.
 
 ## Data path
+
+```mermaid
+flowchart LR
+    A[Open-Meteo Single Runs] --> C[Forecast-error Gold]
+    B[Open-Meteo Archive] --> C
+    D[Energy-Charts market data] --> E[Multi-zone Gold]
+    C --> E
+    E --> F[Fixed-effects analysis]
+```
 
 ```text
 Bronze  raw API responses, request metadata and manifests
@@ -95,6 +104,12 @@ python3 pipeline/build_multi_vintage_forecast_error_gold.py \
   --forecast-silver-batch <forecast-silver-batch> \
   --actual-weather-silver-batch <actual-weather-silver-batch>
 
+python3 pipeline/build_multi_zone_forecast_impact_gold.py \
+  --market-silver-batch <de-lu-market-silver> \
+  --market-silver-batch <fr-market-silver> \
+  --market-silver-batch <at-market-silver> \
+  --weather-error-batch <forecast-error-gold>
+
 python3 pipeline/analyze_multi_zone_multi_vintage_impact.py \
   --gold-batch <multi-zone-gold-batch>
 ```
@@ -123,6 +138,9 @@ The decisions that shaped the current layout are recorded in
 [`docs/decision_log.md`](docs/decision_log.md). In particular, it explains the
 UTC boundary issue in the Energy-Charts API, the unavailable 06 UTC forecast
 run, and the missing Austrian offshore forecast series.
+
+The statistical choices and the limits of the interpretation are in
+[`docs/methodology.md`](docs/methodology.md).
 
 ## Sources
 
